@@ -174,6 +174,7 @@ mappings = {
         "device_type": "sensor",
         "object_suffix": "UTC",
         "config": {
+            "entity_category": "diagnostic",
             "device_class": "timestamp",
             "name": "Timestamp",
             "icon": "mdi:clock-in"
@@ -181,12 +182,36 @@ mappings = {
     },
     "battery_ok": {
         "device_type": "sensor",
+        "object_suffix": "B-OK",
+        "config": {
+            "entity_category": "diagnostic",
+            "force_update": "true",
+            "payload_on": "1",
+            "payload_off": "0"
+        }
+    },
+
+    "battery_raw": {
+        "device_type": "sensor",
         "object_suffix": "B",
         "config": {
             "device_class": "battery",
+            "entity_category": "diagnostic",
             "name": "Battery",
             "unit_of_measurement": "%",
-            "value_template": "{{ float(value|int) * 99 + 1 }}"
+            "value_template": "{{ value|int }}"
+        }
+    },
+
+    "battery_mV": {
+        "device_type": "sensor",
+        "object_suffix": "BV",
+        "config": {
+            "device_class": "battery",
+            "entity_category": "diagnostic",
+            "name": "Battery Voltage",
+            "unit_of_measurement": "mV",
+            "value_template": "{{ value|int }}"
         }
     },
 
@@ -269,8 +294,8 @@ mappings = {
         "object_suffix": "WS",
         "config": {
             "name": "Wind Average",
-            "unit_of_measurement": "km/h",
-            "value_template": "{{ float(value|float) * 3.6 | round(2) }}"
+            "unit_of_measurement": "mi/h",
+            "value_template": "{{ (value|float * 2.236936) | round(2) }}"
         }
     },
 
@@ -279,8 +304,8 @@ mappings = {
         "object_suffix": "WS",
         "config": {
             "name": "Wind Speed",
-            "unit_of_measurement": "km/h",
-            "value_template": "{{ float(value|float) * 3.6 }}"
+            "unit_of_measurement": "mi/h",
+            "value_template": "{{ (value|float * 2.236936) | round(2) }}"
         }
     },
 
@@ -299,8 +324,8 @@ mappings = {
         "object_suffix": "GS",
         "config": {
             "name": "Wind max",
-            "unit_of_measurement": "km/h",
-            "value_template": "{{ float(value|float) * 3.6 | round(2) }}"
+            "unit_of_measurement": "mi/h",
+            "value_template": "{{ (float(value|float) * 2.236936) | round(2) }}"
         }
     },
 
@@ -309,8 +334,28 @@ mappings = {
         "object_suffix": "GS",
         "config": {
             "name": "Gust Speed",
-            "unit_of_measurement": "km/h",
-            "value_template": "{{ float(value|float) * 3.6 }}"
+            "unit_of_measurement": "mi/h",
+            "value_template": "{{ (float(value|float) * 2.236936) | round(2) }}"
+        }
+    },
+
+    "wind_avg_raw": {
+        "device_type": "sensor",
+        "object_suffix": "WS",
+        "config": {
+            "name": "Wind Average",
+            "unit_of_measurement": "mi/h",
+            "value_template": "{{ float(value|float * 0.2236936) | round(2) }}"
+        }
+    },
+
+    "wind_max_raw": {
+        "device_type": "sensor",
+        "object_suffix": "GS",
+        "config": {
+            "name": "Gust Speed",
+            "unit_of_measurement": "mi/h",
+            "value_template": "{{ float(value|float * 0.2236936) | round(2) }}"
         }
     },
 
@@ -329,8 +374,8 @@ mappings = {
         "object_suffix": "RT",
         "config": {
             "name": "Rain Total",
-            "unit_of_measurement": "mm",
-            "value_template": "{{ value|float }}"
+            "unit_of_measurement": "in",
+            "value_template": "{{ (value|float / 25.4) | round(2) }}"
         }
     },
 
@@ -340,7 +385,7 @@ mappings = {
         "config": {
             "name": "Rain Rate",
             "unit_of_measurement": "mm/h",
-            "value_template": "{{ value|float }}"
+            "value_template": "{{ (value|float / 25.4) | round(2) }}"
         }
     },
 
@@ -349,8 +394,8 @@ mappings = {
         "object_suffix": "RT",
         "config": {
             "name": "Rain Total",
-            "unit_of_measurement": "mm",
-            "value_template": "{{ float(value|float) * 25.4 | round(2) }}"
+            "unit_of_measurement": "in",
+            "value_template": "{{ value|float | round(2) }}"
         }
     },
 
@@ -359,8 +404,8 @@ mappings = {
         "object_suffix": "RR",
         "config": {
             "name": "Rain Rate",
-            "unit_of_measurement": "mm/h",
-            "value_template": "{{ float(value|float) * 25.4 | round(2) }}"
+            "unit_of_measurement": "in/h",
+            "value_template": "{{ value|float | round(2) }}"
         }
     },
 
@@ -389,6 +434,7 @@ mappings = {
         "object_suffix": "rssi",
         "config": {
             "device_class": "signal_strength",
+            "entity_category": "diagnostic",
             "unit_of_measurement": "dB",
             "value_template": "{{ value|float|round(2) }}"
         }
@@ -399,6 +445,7 @@ mappings = {
         "object_suffix": "snr",
         "config": {
             "device_class": "signal_strength",
+            "entity_category": "diagnostic",
             "unit_of_measurement": "dB",
             "value_template": "{{ value|float|round(2) }}"
         }
@@ -409,6 +456,7 @@ mappings = {
         "object_suffix": "noise",
         "config": {
             "device_class": "signal_strength",
+            "entity_category": "diagnostic",
             "unit_of_measurement": "dB",
             "value_template": "{{ value|float|round(2) }}"
         }
@@ -439,9 +487,19 @@ mappings = {
         "device_type": "sensor",
         "object_suffix": "lux",
         "config": {
-            "name": "Outside Luminancee",
+            "name": "Outside Luminance",
             "unit_of_measurement": "lux",
             "value_template": "{{ value|int }}"
+        }
+    },
+
+    "lux_raw": {
+        "device_type": "sensor",
+        "object_suffix": "lux",
+        "config": {
+            "name": "Outside Luminance",
+            "unit_of_measurement": "lux",
+            "value_template": "{{ (value | int) * 10 }}"
         }
     },
 
