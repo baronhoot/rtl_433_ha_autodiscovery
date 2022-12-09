@@ -490,6 +490,7 @@ mappings = {
             "name": "Solar Lux",
             "unit_of_measurement": "lx",
             "device_class": "illuminance",
+            "state_class": "measurement",
             "value_template": "{{ value|int }}"
         }
     },
@@ -501,6 +502,7 @@ mappings = {
             "name": "Solar Lux",
             "unit_of_measurement": "lx",
             "device_class": "illuminance",
+            "state_class": "measurement",
             "value_template": "{{ (value | int) * 10 }}"
         }
     },
@@ -511,6 +513,7 @@ mappings = {
         "config": {
             "name": "UV Index",
             "unit_of_measurement": "UV Index",
+            "state_class": "measurement",
             "value_template": "{{ value|int }}"
         }
     },
