@@ -135,6 +135,7 @@ mappings = {
         "object_suffix": "T",
         "config": {
             "device_class": "temperature",
+            "state_class": "measurement",
             "name": "Temperature",
             "unit_of_measurement": "°C",
             "value_template": "{{ value|float }}"
@@ -145,6 +146,7 @@ mappings = {
         "object_suffix": "T1",
         "config": {
             "device_class": "temperature",
+            "state_class": "measurement",
             "name": "Temperature 1",
             "unit_of_measurement": "°C",
             "value_template": "{{ value|float }}"
@@ -155,6 +157,7 @@ mappings = {
         "object_suffix": "T2",
         "config": {
             "device_class": "temperature",
+            "state_class": "measurement",
             "name": "Temperature 2",
             "unit_of_measurement": "°C",
             "value_template": "{{ value|float }}"
@@ -165,6 +168,7 @@ mappings = {
         "object_suffix": "F",
         "config": {
             "device_class": "temperature",
+            "state_class": "measurement",
             "name": "Temperature",
             "unit_of_measurement": "°F",
             "value_template": "{{ value|float }}"
@@ -185,6 +189,7 @@ mappings = {
         "object_suffix": "B-OK",
         "config": {
             "entity_category": "diagnostic",
+            "state_class": "measurement",
             "force_update": "true",
             "payload_on": "1",
             "payload_off": "0"
@@ -196,6 +201,7 @@ mappings = {
         "object_suffix": "B",
         "config": {
             "device_class": "battery",
+            "state_class": "measurement",
             "entity_category": "diagnostic",
             "name": "Battery",
             "unit_of_measurement": "%",
@@ -208,6 +214,7 @@ mappings = {
         "object_suffix": "BV",
         "config": {
             "device_class": "battery",
+            "state_class": "measurement",
             "entity_category": "diagnostic",
             "name": "Battery Voltage",
             "unit_of_measurement": "mV",
@@ -220,6 +227,7 @@ mappings = {
         "object_suffix": "H",
         "config": {
             "device_class": "humidity",
+            "state_class": "measurement",
             "name": "Humidity",
             "unit_of_measurement": "%",
             "value_template": "{{ value|float }}"
@@ -231,6 +239,7 @@ mappings = {
         "object_suffix": "H",
         "config": {
             "device_class": "moisture",
+            "state_class": "measurement",
             "name": "Moisture",
             "unit_of_measurement": "%",
             "value_template": "{{ value|float }}"
@@ -242,6 +251,7 @@ mappings = {
         "object_suffix": "P",
         "config": {
             "device_class": "pressure",
+            "state_class": "measurement",
             "name": "Pressure",
             "unit_of_measurement": "hPa",
             "value_template": "{{ value|float }}"
@@ -253,6 +263,7 @@ mappings = {
         "object_suffix": "P",
         "config": {
             "device_class": "pressure",
+            "state_class": "measurement",
             "name": "Pressure",
             "unit_of_measurement": "kPa",
             "value_template": "{{ value|float }}"
@@ -264,6 +275,7 @@ mappings = {
         "object_suffix": "WS",
         "config": {
             "name": "Wind Speed",
+            "state_class": "measurement",
             "unit_of_measurement": "km/h",
             "value_template": "{{ value|float }}"
         }
@@ -274,6 +286,7 @@ mappings = {
         "object_suffix": "WS",
         "config": {
             "name": "Wind Speed",
+            "state_class": "measurement",
             "unit_of_measurement": "km/h",
             "value_template": "{{ value|float }}"
         }
@@ -284,6 +297,7 @@ mappings = {
         "object_suffix": "WS",
         "config": {
             "name": "Wind Speed",
+            "state_class": "measurement",
             "unit_of_measurement": "mi/h",
             "value_template": "{{ value|float }}"
         }
@@ -294,6 +308,7 @@ mappings = {
         "object_suffix": "WS",
         "config": {
             "name": "Wind Average",
+            "state_class": "measurement",
             "unit_of_measurement": "mi/h",
             "value_template": "{{ (value|float * 2.236936) | round(2) }}"
         }
@@ -304,6 +319,7 @@ mappings = {
         "object_suffix": "WS",
         "config": {
             "name": "Wind Speed",
+            "state_class": "measurement",
             "unit_of_measurement": "mi/h",
             "value_template": "{{ (value|float * 2.236936) | round(2) }}"
         }
@@ -314,6 +330,7 @@ mappings = {
         "object_suffix": "GS",
         "config": {
             "name": "Gust Speed",
+            "state_class": "measurement",
             "unit_of_measurement": "km/h",
             "value_template": "{{ value|float }}"
         }
@@ -324,6 +341,7 @@ mappings = {
         "object_suffix": "GS",
         "config": {
             "name": "Wind max",
+            "state_class": "measurement",
             "unit_of_measurement": "mi/h",
             "value_template": "{{ (float(value|float) * 2.236936) | round(2) }}"
         }
@@ -334,6 +352,7 @@ mappings = {
         "object_suffix": "GS",
         "config": {
             "name": "Gust Speed",
+            "state_class": "measurement",
             "unit_of_measurement": "mi/h",
             "value_template": "{{ (float(value|float) * 2.236936) | round(2) }}"
         }
@@ -344,6 +363,7 @@ mappings = {
         "object_suffix": "WS",
         "config": {
             "name": "Wind Average",
+            "state_class": "measurement",
             "unit_of_measurement": "mi/h",
             "value_template": "{{ float(value|float * 0.2236936) | round(2) }}"
         }
@@ -354,6 +374,7 @@ mappings = {
         "object_suffix": "GS",
         "config": {
             "name": "Gust Speed",
+            "state_class": "measurement",
             "unit_of_measurement": "mi/h",
             "value_template": "{{ float(value|float * 0.2236936) | round(2) }}"
         }
@@ -364,6 +385,7 @@ mappings = {
         "object_suffix": "WD",
         "config": {
             "name": "Wind Direction",
+            "state_class": "measurement",
             "unit_of_measurement": "°",
             "value_template": "{{ value|float }}"
         }
@@ -374,6 +396,7 @@ mappings = {
         "object_suffix": "RT",
         "config": {
             "name": "Rain Total",
+            "state_class": "total",
             "unit_of_measurement": "in",
             "value_template": "{{ (value|float / 25.4) | round(2) }}"
         }
@@ -384,6 +407,7 @@ mappings = {
         "object_suffix": "RR",
         "config": {
             "name": "Rain Rate",
+            "state_class": "measurement",
             "unit_of_measurement": "mm/h",
             "value_template": "{{ (value|float / 25.4) | round(2) }}"
         }
@@ -394,6 +418,7 @@ mappings = {
         "object_suffix": "RT",
         "config": {
             "name": "Rain Total",
+            "state_class": "total",
             "unit_of_measurement": "in",
             "value_template": "{{ value|float | round(2) }}"
         }
@@ -404,6 +429,7 @@ mappings = {
         "object_suffix": "RR",
         "config": {
             "name": "Rain Rate",
+            "state_class": "measurement",
             "unit_of_measurement": "in/h",
             "value_template": "{{ value|float | round(2) }}"
         }
@@ -434,6 +460,7 @@ mappings = {
         "object_suffix": "rssi",
         "config": {
             "device_class": "signal_strength",
+            "state_class": "measurement",
             "entity_category": "diagnostic",
             "unit_of_measurement": "dB",
             "value_template": "{{ value|float|round(2) }}"
@@ -445,6 +472,7 @@ mappings = {
         "object_suffix": "snr",
         "config": {
             "device_class": "signal_strength",
+            "state_class": "measurement",
             "entity_category": "diagnostic",
             "unit_of_measurement": "dB",
             "value_template": "{{ value|float|round(2) }}"
@@ -456,6 +484,7 @@ mappings = {
         "object_suffix": "noise",
         "config": {
             "device_class": "signal_strength",
+            "state_class": "measurement",
             "entity_category": "diagnostic",
             "unit_of_measurement": "dB",
             "value_template": "{{ value|float|round(2) }}"
@@ -467,6 +496,7 @@ mappings = {
         "object_suffix": "D",
         "config": {
             "name": "Depth",
+            "state_class": "measurement",
             "unit_of_measurement": "cm",
             "value_template": "{{ value|float }}"
         }
@@ -477,6 +507,7 @@ mappings = {
         "object_suffix": "watts",
         "config": {
             "device_class": "power",
+            "state_class": "measurement",
             "name": "Power",
             "unit_of_measurement": "W",
             "value_template": "{{ value|float }}"
@@ -523,6 +554,7 @@ mappings = {
         "object_suffix": "stdist",
         "config": {
             "name": "Lightning Distance",
+            "state_class": "measurement",
             "unit_of_measurement": "mi",
             "value_template": "{{ value|int }}"
         }
@@ -533,6 +565,7 @@ mappings = {
         "object_suffix": "stdist",
         "config": {
             "name": "Lightning Distance",
+            "state_class": "measurement",
             "unit_of_measurement": "mi",
             "value_template": "{{ value|int }}"
         }
