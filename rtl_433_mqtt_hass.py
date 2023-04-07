@@ -213,7 +213,7 @@ mappings = {
         "device_type": "sensor",
         "object_suffix": "BV",
         "config": {
-            "device_class": "battery",
+            "device_class": "voltage",
             "state_class": "measurement",
             "entity_category": "diagnostic",
             "name": "Battery Voltage",
